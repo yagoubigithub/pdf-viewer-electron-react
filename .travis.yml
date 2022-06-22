@@ -26,9 +26,6 @@ install:
   - yarn
 
 script:
-  - echo "Deploy linux version to GitHub"
-  - if [[ "$TRAVIS_BRANCH" == "master" ]] && [[ "$TRAVIS_OS_NAME" == "linux" ]]; then yarn release:linux; fi
-
   - echo "Deploy windows version to GitHub"
   - if [[ "$TRAVIS_BRANCH" == "master" ]] && [[ "$TRAVIS_OS_NAME" == "osx" ]]; then yarn release:win; fi
 
