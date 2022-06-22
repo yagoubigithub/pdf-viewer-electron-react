@@ -32,3 +32,18 @@ script:
 
   - echo "Deploy mac version to GitHub"
   - if [[ "$TRAVIS_BRANCH" == "master" ]] && [[ "$TRAVIS_OS_NAME" == "osx" ]]; then yarn release:mac; fi
+
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key: $GH_TOKEN
+  file_glob: true
+  file:
+    - "dist/*.exe"
+    - "dist/*.deb"
+    - "dist/*.dmg"
+
+  on:
+    tags: false
+
