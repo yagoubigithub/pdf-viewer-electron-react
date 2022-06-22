@@ -1,6 +1,6 @@
 osx_image: xcode8.4 # define OS X image which will be mounted
 
-dist: Ubuntu # use Ubuntu Trusty for Linux operation system
+
 
 # Note: if you switch to sudo: false, you'll need to launch chrome with --no-sandbox.
 # See https://github.com/travis-ci/travis-ci/issues/8836
@@ -24,6 +24,7 @@ install:
   # On OS X we first need to install Yarn via Homebrew
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install yarn; fi
   # Install all dependencies listed in your package.json file
+  - npm install -g yarn
   - yarn
 
 script:
