@@ -17,6 +17,7 @@ addons:
 os:
   - linux
   - osx
+  - win
 
 # These commands are executed before the scripts are executed
 install:
