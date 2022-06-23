@@ -12,6 +12,10 @@ node_js: '14'
 
 addons:
   chrome: stable # Install chrome stable on operating systems
+  apt:
+    packages:
+      - xvfb
+
 
 # A list of operating systems which are used for tests
 os:
@@ -39,7 +43,6 @@ deploy:
   provider: releases
   skip_cleanup: true
   api_key: $GH_TOKEN
-  github_token: $TRAVIS_DEPLOY_TOKEN
   file_glob: true
   file:
     - "dist/*.exe"
