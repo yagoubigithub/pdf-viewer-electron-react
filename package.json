@@ -25,7 +25,7 @@
     "react-test": "react-scripts test --env=jsdom",
     "react-eject": "react-scripts eject",
     "electron-build": "electron-builder",
-    "release": "yarn react-build && electron-builder --publish=never",
+    "release": "yarn react-build && electron-builder  -mwl",
     "release:win" :"yarn react-build && yarn electron-build -p always",
     "release:linux" :"yarn react-build && yarn electron-build -p always",
     "release:mac" :"yarn react-build && yarn electron-build -p always",
