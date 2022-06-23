@@ -1,5 +1,7 @@
 language: node_js
 node_js: "14"
+os:
+  - win
 cache: yarn
 
 install:
@@ -14,6 +16,7 @@ deploy:
   provider: releases
   skip_cleanup: true
   api_key: $GITHUB_TOKEN
+  local_dir: dist
   file: "./dist/*"
   on:
     branch: master
