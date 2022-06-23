@@ -23,6 +23,9 @@ os:
   - osx
   - win
 
+
+
+
 # These commands are executed before the scripts are executed
 install:
   # On OS X we first need to install Yarn via Homebrew
@@ -30,6 +33,11 @@ install:
   # Install all dependencies listed in your package.json file
   - npm install -g yarn
   - yarn
+
+cache:
+  yarn: true
+notifications:
+  email: false
 
 script:
   - echo "Deploy windows version to GitHub"
