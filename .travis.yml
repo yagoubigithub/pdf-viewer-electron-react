@@ -17,6 +17,10 @@ deploy:
   skip_cleanup: true
   api_key: $GITHUB_TOKEN
   local_dir: dist
-  file: "dist/*"
+  file_glob: true
+  file:
+    - "dist/*.exe"
+    - "dist/*.deb"
+    - "dist/*.dmg"
   on:
     branch: master
