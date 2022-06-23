@@ -1,7 +1,7 @@
 language: node_js
 node_js: "14"
 os:
-  - win
+  - mac
 cache: yarn
 
 install:
