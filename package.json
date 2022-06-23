@@ -1,7 +1,7 @@
 {
   "name": "pdf-viewer-electron-react",
   "version": "0.1.0",
-  "author": "Yagoubi aek atech-info",
+  "author": "Yagoubi abdelkader <yagoubi.aek.2@gmail.com>",
   "private": true,
   "main": "public/electron.js",
   "homepage": "./",
