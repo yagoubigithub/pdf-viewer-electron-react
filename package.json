@@ -5,6 +5,38 @@
   "private": true,
   "main": "public/electron.js",
   "homepage": "./",
+  "build": {
+    "appId": "com.pdf-viewer-electron-react",
+    "directories": {
+      "buildResources": "public"
+    },
+    "win": {
+      "icon": "public/logo.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "mac": {
+      "icon": "public/logo.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "deleteAppDataOnUninstall": true,
+      "uninstallDisplayName": "pdf-viewer-electron-react",
+      "license": "license.txt",
+      "language": 1033,
+      "displayLanguageSelector": false
+    },
+    "linux" : {
+      "icon": "public/logo-linux.icns",
+
+      "target" :["deb"]
+
+    },
+    "productName": "pdf-viewer-electron-react",
+    "copyright": "yagoubi abdelkader"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
