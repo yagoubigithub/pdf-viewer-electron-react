@@ -1,35 +1,19 @@
-matrix:
-  include:
-    - os: osx
-      osx_image: xcode10.2
-      language: node_js
-      node_js: "14"
-      env:
-        - ELECTRON_CACHE=$HOME/.cache/electron
-        - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+language: node_js
+node_js: "14"
+cache: yarn
 
-    - os: linux
-    - os: win
-      
-
-cache:
-  directories:
-    - node_modules
-    - $HOME/.cache/electron
-    - $HOME/.cache/electron-builder
-# These commands are executed before the scripts are executed
 install:
-  # On OS X we first need to install Yarn via Homebrew
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install yarn; fi
-  # Install all dependencies listed in your package.json file
   - npm install -g yarn
-  - yarn
-  
-script:
-  - yarn release
-before_cache:
-  - rm -rf $HOME/.cache/electron-builder/wine
+  - yarn install
 
-branches:
-  except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
+scripts:
+  - yarn test
+  - yarn build
+
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  on:
+    branch: master
